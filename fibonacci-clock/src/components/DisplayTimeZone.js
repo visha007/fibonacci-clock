@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import moment from 'moment-timezone';
 
-const DisplayTimeZone = ({ city, timezone }) => {
+const DisplayTimeZone = ({ cityName, timezone }) => {
   const [time, setTime] = useState(moment.tz(timezone).format('HH:mm:ss'));
 
   useEffect(() => {
@@ -14,7 +14,7 @@ const DisplayTimeZone = ({ city, timezone }) => {
 
   return (
     <div className="display-timezone">
-      <h2>{city}</h2>
+      <h2>{cityName}</h2>
       <p>{time}</p>
     </div>
   );

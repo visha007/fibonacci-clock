@@ -4,7 +4,7 @@ import DisplayFibClock from './components/DisplayFibClock';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">Fibonaaci clock</header>
+      <h1>Fibonacci clock</h1>
       <DisplayFibClock/>
     </div>
   );

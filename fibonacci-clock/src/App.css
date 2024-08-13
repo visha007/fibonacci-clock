@@ -1,50 +1,110 @@
 /* src/styles.css */
 
+/* Body Styling */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-}
-  
-.App {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-  
-h1, h3 {
-  text-align: center;
-}
-  
-.clock-angle,
-.alarm-manager {
-  margin-bottom: 20px;
-  align-items: center;
-}
-  
-.timezone-container {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #fff0f6, #ffe0e9);
+  color: #333; /* Darker font color for general text */
+  margin: 0;
+  padding: 0;
   display: flex;
-  justify-content: space-around; 
-  align-items: center; 
-  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  background-image: url('https://media.giphy.com/media/BHNfhgU63qrks/giphy.gif'); /* Replace with a link to a cute, animated pink background */
+  background-size: cover;
+  background-position: center;
 }
 
+/* Main App Container */
+.App {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 30px;
+  background: #ffffffd9;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow for contrast */
+  transition: transform 0.2s;
+}
+
+.App:hover {
+  transform: scale(1.02);
+}
+
+/* Header Styling */
+h1 {
+  text-align: center;
+  font-size: 2.5em;
+  color: #d45a77; /* Darker pink color */
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Darker shadow for better readability */
+}
+
+h3 {
+  font-size: 1.8em;
+  color: #d18c9f; /* Darker pink color */
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Clock Angle and Alarm Manager */
+.clock-angle,
+.alarm-manager {
+  margin-bottom: 30px;
+  padding: 15px;
+  background: #f8d9e0; /* Softer pink background */
+  border-radius: 12px;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1); /* Darker shadow for contrast */
+  text-align: center;
+}
+
+/* Timezone Container */
+.timezone-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  background: #f9e2e6; /* Softer pink background */
+  border-radius: 12px;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1); /* Darker shadow for contrast */
+  margin-bottom: 20px;
+}
+
+/* Timezone Display */
 .display-timezone {
-  flex: 1; 
-  text-align: center; 
-  margin: 0 10px;
+  flex: 1;
+  text-align: center;
+  margin: 0 15px;
+  padding: 10px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ff7f9f, #ffb3c1); /* Softer pink gradient */
+  color: #333; /* Darker text color for contrast */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Darker shadow for contrast */
 }
 
 .display-timezone h2 {
-  font-size: 24px;
+  font-size: 26px;
   margin-bottom: 10px;
+  color: #333; /* Darker text color */
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .display-timezone p {
-  font-size: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0;
+  color: #333; /* Darker text color */
 }
 
-  
+/* Transition Effect */
+.display-timezone:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Darker shadow for hover effect */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Adding Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');

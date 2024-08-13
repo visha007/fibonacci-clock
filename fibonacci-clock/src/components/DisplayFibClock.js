@@ -12,9 +12,9 @@ const DisplayFibClock = () => {
     <div className="clock-display">
         <DisplayClockAngle hours={hours} minutes={minutes} />
         <div className='timezone-container'>
-            <DisplayTimeZone city="Chattogram" timezone="Asia/Dhaka" />
-            <DisplayTimeZone city="Calcutta" timezone="Asia/Kolkata" />
-            <DisplayTimeZone city="Delta" timezone="America/Vancouver" />
+            <DisplayTimeZone cityName="Chattogram" timezone="Asia/Dhaka" />
+            <DisplayTimeZone cityName="Calcutta" timezone="Asia/Kolkata" />
+            <DisplayTimeZone cityName="Delta" timezone="America/Vancouver" />
         </div>
       <AlarmHandler/>
     </div>

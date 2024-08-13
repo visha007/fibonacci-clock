@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 const AlarmHandler = () => {
   const [currentFibonacci, setCurrentFibonacci] = useState(0);
   const [nextAlarm, setNextAlarm] = useState(null);
+  // const audioRef = useRef(new Audio('/alarm-sound.mp3')); // Path to your sound file
+
 
   const fibonacci = (n) => {
     if (n <= 1) return n;
@@ -18,6 +20,7 @@ const AlarmHandler = () => {
 
     const interval = setInterval(() => {
       if (new Date() >= nextAlarmTime) {
+        // audioRef.current.play(); // play the alarm tune!! 
         alert('Alarm!');
         setCurrentFibonacci((prev) => prev + 1);
       }
