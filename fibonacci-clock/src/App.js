@@ -1,13 +1,11 @@
 import './App.css';
+import DisplayFibClock from './components/DisplayFibClock';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Testing, Hello World!
-        </p>
-      </header>
+      <header className="App-header">Fibonaaci clock</header>
+      <DisplayFibClock/>
     </div>
   );
 }
