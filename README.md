@@ -1,9 +1,12 @@
 ## Steps to run a local version of this app:
-- Step 1: clone the repo
+- Step 1: clone the repo using HTTPS/SSH/CLI 
 - Step 2: open the application files in vscode and start a new terminal
-- Step 3: type `npm install` and click Enter -> this will install all dependencies required to prepare the app for `Step 4`
+- Step 3:
+    - Substep 3.1.1: please ensure you have `Node.js` (version 20.12.2 preferably) installed
+    - Substep 3.1.2 (optional to read): please ensure installation in substep 3.1.1 was successful, as the app uses `npm` to manage project dependencies and this tool comes bundled with `Node.js` 
+    - Substep 3.2: type `npm install` and click Enter -> this will install all dependencies required to prepare the app for `Step 4`
 - Step 4: once `Step 3` is complete, type `npm start` and click Enter -> this opens up a development server ([http://localhost:3000] by default) to serve the app
-- Step 5 (optional): Open http://localhost:3000 to view it in your browser -> incase the browser doesn't load automatically, or in case the tab is accidently closed. :))
+- Step 5 (optional): open http://localhost:3000 to view it in your browser -> incase the browser doesn't load automatically, or in case the tab is accidently closed. :))
 
 ## Assumptions made:
 - Assumed that the alarm will be reset if the user reloads the application. 

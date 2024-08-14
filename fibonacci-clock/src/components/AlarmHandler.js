@@ -5,7 +5,7 @@ const AlarmHandler = () => {
   const [currentFibonacci, setCurrentFibonacci] = useState(0);
   const [duration, setDuration] = useState('Calculating...');
 
-  // const audioRef = useRef(new Audio(CatAlarm)); // Path to your sound file
+  // const audioRef = useRef(new Audio(CatAlarm));
 
   const fibonacci = (n) => {
     if (n <= 1) return n;
