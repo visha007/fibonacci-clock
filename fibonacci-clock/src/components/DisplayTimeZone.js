@@ -6,7 +6,7 @@ const DisplayTimeZone = ({ cityName, timezone }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTime(moment.tz(timezone).format('HH:mm:ss'));
+      setTime(moment.tz(timezone).format('HH:mm:ss')); // update the duration for each city every second (to display real-time changes)
     }, 1000);
 
     return () => clearInterval(interval);

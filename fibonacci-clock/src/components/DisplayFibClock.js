@@ -4,6 +4,7 @@ import DisplayClockAngle from './DisplayClockAngle';
 import AlarmHandler from './AlarmHandler';
 
 const DisplayFibClock = () => {
+  // the clock angle uses the local time as input to the DisplayClockAngle() method
   const localTime = new Date();
   const hours = localTime.getHours();
   const minutes = localTime.getMinutes();

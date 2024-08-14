@@ -1,14 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+// import CatAlarm from '../media/cat_alarm.mp3';
 
 const AlarmHandler = () => {
   const [currentFibonacci, setCurrentFibonacci] = useState(0);
-  const [nextAlarm, setNextAlarm] = useState(null);
-  // const audioRef = useRef(new Audio('/alarm-sound.mp3')); // Path to your sound file
+  const [duration, setDuration] = useState('Calculating...');
 
+  // const audioRef = useRef(new Audio(CatAlarm)); // Path to your sound file
 
   const fibonacci = (n) => {
     if (n <= 1) return n;
     return fibonacci(n - 1) + fibonacci(n - 2);
+  };
+
+  const formatDuration = (durationMs) => {
+    // calculating each of the hh, mm, and ss components for the duration of the next alarm
+    const totalSeconds = Math.floor(durationMs / 1000);
+    const hours = Math.floor(totalSeconds / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+    const result = `${hours}h ${minutes}m ${seconds}s`;  
+
+    return result;
   };
 
   useEffect(() => {
@@ -16,22 +28,28 @@ const AlarmHandler = () => {
     const nextAlarmTime = new Date();
     nextAlarmTime.setHours(nextAlarmTime.getHours() + nextFibonacci);
 
-    setNextAlarm(nextAlarmTime);
-
-    const interval = setInterval(() => {
-      if (new Date() >= nextAlarmTime) {
-        // audioRef.current.play(); // play the alarm tune!! 
-        alert('Alarm!');
+    const updateDuration = () => {
+      const now = new Date();
+      const timeUntilAlarm = nextAlarmTime - now;
+      if (timeUntilAlarm <= 0) {
+        setDuration('Time is up!');
+        // audioRef.current.play(); // play the alarm tune!! -> couldn't include this as chrome prohibits autoplaying media :(
+        alert('Ruh Roh! Your alarm is going off!');
         setCurrentFibonacci((prev) => prev + 1);
+      } else {
+        setDuration(formatDuration(timeUntilAlarm));
       }
-    }, 1000);
+    };
+
+    // updates the duration every second (to show real-time changes)
+    const interval = setInterval(updateDuration, 1000);
 
     return () => clearInterval(interval);
   }, [currentFibonacci]);
 
   return (
     <div className="alarm-handler">
-      <h3>Next Alarm : {nextAlarm ? nextAlarm.toLocaleTimeString() : 'Calculating...'}</h3>
+      <h3>Time until next alarm: {duration}</h3>
     </div>
   );
 };
